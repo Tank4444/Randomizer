@@ -9,6 +9,12 @@ plugins {
 group = "ru.chuikov.program"
 version = "1.0-SNAPSHOT"
 
+allprojects{
+    repositories{
+        mavenCentral()
+    }
+}
+
 kotlin {
     android()
     jvm("desktop") {
