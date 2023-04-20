@@ -8,6 +8,7 @@ import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.material.Checkbox
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.remember
 import androidx.compose.runtime.snapshots.SnapshotStateList
 import androidx.compose.ui.Modifier
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -15,7 +16,7 @@ import ru.chuikov.program.common.AudienceGenerated
 
 @Composable
 fun ViewAudience(list: SnapshotStateList<AudienceGenerated>){
-    val _itemsListFlow = MutableStateFlow(list)
+    val _itemsListFlow = remember { MutableStateFlow(list)}
     LazyColumn(
         modifier = Modifier.fillMaxSize()
     ){
